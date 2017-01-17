@@ -57,7 +57,7 @@ def monthly_total(year, month, transaction_type):
 				if transaction_type in i['type']:
 					month_total += i['amount']
 					for j in category_dict:
-						if j in i['description']:
+						if j.upper() in i['description'].upper():
 							category_totals[category_dict[j]] += i['amount']
 	return (month_total, category_totals)
 
