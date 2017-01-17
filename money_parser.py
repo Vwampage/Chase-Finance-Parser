@@ -56,6 +56,11 @@ def monthly_total(year, month, transaction_type):
 			if i['transaction_date']['month'] == month:
 				if transaction_type in i['type']:
 					month_total += i['amount']
+					#could make a boolean for whether something
+					#has matched or not, and it could skip further
+					#matching if it has matched.
+					#also that could help us find uncategorized
+					#things for future things.
 					for j in category_dict:
 						if j.upper() in i['description'].upper():
 							category_totals[category_dict[j]] += i['amount']
